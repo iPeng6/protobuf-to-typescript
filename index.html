@@ -31,9 +31,9 @@
         <br>
 <textarea name="" id="protobuf" rows="40" oninput="onProtobuf()">
 message Person {
-  string name = 1;
-  int32 id = 2;
-  bool isFriend = 3;
+  string name = 1; // 姓名
+  int32 id = 2; //唯一标识
+  bool isFriend = 3;//是否绝交
   repeated PhoneNumber phones = 4;
 }
 
@@ -115,7 +115,7 @@ message AddressBook {
         const indentChar = line[0];
 
         const tokens = line.trim().split(" ").filter(Boolean);
-
+        const annotation = line.split("//");
         let isRepeated = false;
         // debugger;
         switch (tokens[0]) {
@@ -130,7 +130,7 @@ message AddressBook {
             tokens.shift();
         }
 
-        return `${indentChar.repeat(indent)}${tokens[1]}: ${protoToTsType(tokens[0])}${ isRepeated ? "[]" : ""}`;
+        return `${indentChar.repeat(indent)}${tokens[1]}: ${protoToTsType(tokens[0])}${ isRepeated ? "[]" : ""}${annotation.length>1?' // '+annotation[1].trimLeft():''}`;
       }
 
       parseProtobuf(protobufVal());
