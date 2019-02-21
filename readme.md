@@ -41,4 +41,7 @@ interface AddressBook {
 ```
 
 ## Usage:
-Go here: [https://geotho.github.io/protobuf-to-typescript/](https://geotho.github.io/protobuf-to-typescript/)
+Go here: https://ipeng6.github.io/protobuf-to-typescript/
+
+## Acknowledgement
+forked from geotho/protobuf-to-typescript
